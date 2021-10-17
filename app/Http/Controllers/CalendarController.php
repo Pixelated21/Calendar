@@ -64,7 +64,8 @@ class CalendarController extends Controller
             for($i = 0; $i < $skip; $i++)
             {
                 $tempDate->subDay();
-            }
+            } 
+            
 
 
             //loops through month
