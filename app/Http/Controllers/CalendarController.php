@@ -11,16 +11,20 @@ class CalendarController extends Controller
 
     public function calendar($date = null)
     {
-        $date = empty($date) ? Carbon::now() : Carbon::createFromDate($date);
-        $startOfCalendar = $date->copy()->firstOfMonth()->startOfWeek(CarbonInterface::SUNDAY);
-        $endOfCalendar = $date->copy()->lastOfMonth()->endOfWeek(CarbonInterface::SATURDAY);
 
-        $html = '';
-        while($startOfCalendar <= $endOfCalendar)
-        {
-            $html .= $startOfCalendar->format('j');
-            $startOfCalendar->addDay();
-        }
+        $html = Carbon::get;
+
+//        $date = empty($date) ? Carbon::now() : Carbon::createFromDate($date);
+//
+//        $startOfCalendar = $date->copy()->firstOfMonth();
+//        $endOfCalendar = $date->copy()->lastOfMonth();
+//
+//        $html = '';
+//        while($startOfCalendar <= $endOfCalendar)
+//        {
+//            $html .= $startOfCalendar->format('j');
+//            $startOfCalendar->addDay();
+//        }
         return view('calendar',compact('html'));
     }
 }
