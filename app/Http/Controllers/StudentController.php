@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
+
 class StudentController extends Controller
 {
     public function index()
     {
-        return view('list.index');
+       $lists = Student::all();
+
+        return view('list.index',compact(['lists']));
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\StudentController;
+use App\Http\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +22,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/calendar', [CalendarController::class,'calendar']);
+Route::get('/calendar', [CalendarController::class, 'calendar']);
+Route::get('/student', [StudentController::class, 'index']);
+Route::get('/search', Home::class);
